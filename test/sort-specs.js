@@ -23,7 +23,7 @@ describe ('Basic Sorting Algorithms', function () {
     chai.spy.restore(console, 'log');
   });
 
-  it.only('performs a out-of-place insertion sort', function () {
+  it('performs a out-of-place insertion sort', function () {
 
     let newArr = insertionSort(arr);
 
@@ -42,7 +42,7 @@ describe ('Basic Sorting Algorithms', function () {
 
   });
 
-  it('performs an in-place insertion sort', function () {
+  it.only('performs an in-place insertion sort', function () {
 
     insertionSortInPlace(arr);
 
@@ -56,7 +56,6 @@ describe ('Basic Sorting Algorithms', function () {
     expect(consoleSpy).on.nth(8).be.called.with('1,2,3,4,5,6,7,8,9');
 
     expect(arr).to.deep.equal([1,2,3,4,5,6,7,8,9]);
-
   });
 
 });

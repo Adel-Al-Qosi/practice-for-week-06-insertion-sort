@@ -24,7 +24,6 @@ function insertionSort(arr) {
 
   while (array.length > 0) {
     console.log(sorted.join(","))
-    console.dir(array, sorted)
     const lastElement = array.pop()
     if (sorted.length === 0) {
       sorted.push(lastElement)
@@ -67,6 +66,31 @@ function insertionSortInPlace(arr) {
   */
 
   // Your code here
+  let pointer = 0
+  while (arr[pointer + 1]) {
+    console.log(arr.join(','))
+    if (arr[pointer] > arr[pointer + 1]) {
+      const element = arr.splice(pointer + 1, 1)[0]
+      let sorted = false
+      for (let i = 0; i <= pointer; i++) {
+        if (element < arr[i]) {
+          arr.splice(i, 0, element)
+          pointer++
+          sorted = true
+          break
+        }
+      }
+
+      if (!sorted) {
+        arr.unshift(element)
+        pointer++
+      }
+    } else {
+      pointer++
+    }
+  }
+
+  return arr
 }
 
 module.exports = [insertionSort, insertionSortInPlace];
