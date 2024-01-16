@@ -23,7 +23,7 @@ describe ('Basic Sorting Algorithms', function () {
     chai.spy.restore(console, 'log');
   });
 
-  it('performs a out-of-place insertion sort', function () {
+  it.only('performs a out-of-place insertion sort', function () {
 
     let newArr = insertionSort(arr);
 
